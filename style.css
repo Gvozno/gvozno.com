@@ -1,0 +1,32 @@
+body {
+    background-color: #000000; 
+    color: #ffffff;            
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: center;        
+}
+
+.top-image {
+    width: 300px;              
+    height: auto;
+    display: block;
+    margin: 20px auto;         
+    border-radius: 10px;       
+}
+
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; 
+    color: #000000;            
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.link-button:hover {
+    background-color: #cccccc; 
+}
