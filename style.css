@@ -1,29 +1,18 @@
 /* 1. */
-html {
-    height: 100%;
-}
-
-body {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: #ffffff;
+    
+
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url("./photo.jpg") no-repeat center center scroll;
+    background-size: cover;
+    
     display: flex;
     flex-direction: column;
-    
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                url("./photo.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
-
-/* FIX */
-@media (max-width: 500px) {
-    body {
-        background-attachment: scroll !important;
-        background-size: cover;
-        background-repeat: repeat-y; 
-    }
 }
 
 .content-wrapper {
@@ -277,6 +266,7 @@ footer {
 .footer-content { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin: 0; }
 .footer-email { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 0.85rem; }
+
 
 
 
