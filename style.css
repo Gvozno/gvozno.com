@@ -10,7 +10,7 @@ html, body {
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                url("./photo.jpg") no-repeat center top fixed;
+                url("./photo.jpg") no-repeat center top scroll;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -19,22 +19,15 @@ body {
 
 @media (max-width: 500px) {
     body {
-        background-attachment: scroll !important;
-        
         background-size: 100% auto !important; 
-        background-position: center top !important;
+        background-attachment: scroll !important;
         background-repeat: repeat-y;
     }
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-    box-sizing: border-box;
+    
+    .content-wrapper {
+        width: 100% !important;
+        padding: 40px 15px !important;
+    }
 }
 
 /* 2. */
@@ -278,6 +271,7 @@ footer {
 .footer-content { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin: 0; }
 .footer-email { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 0.85rem; }
+
 
 
 
