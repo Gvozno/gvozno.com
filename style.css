@@ -1,40 +1,24 @@
 /* 1. */
-.content-wrapper {
-    width: 100%;
-    max-width: 600px;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url("./photo.jpg") no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
+}
+.content-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;     
     padding: 60px 20px;
     box-sizing: border-box;
-}
-
-.release-container {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.links-container, .setup-section, .divider-line {
-    width: 100%;
-    max-width: 350px;
-}
-
-@media (max-width: 500px) {
-    body {
-        background-attachment: scroll !important;
-        background-size: 100% auto !important; 
-        background-repeat: repeat-y;
-    }
-    
-    .release-container {
-        max-width: 90%;
-    }
-
-    .links-container, .setup-section, .divider-line {
-        max-width: 320px;
-    }
 }
 
 /* 2. */
@@ -278,8 +262,6 @@ footer {
 .footer-content { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin: 0; }
 .footer-email { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 0.85rem; }
-
-
 
 
 
