@@ -264,19 +264,5 @@ footer {
 .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin: 0; }
 .footer-email { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 0.85rem; }
 
-@media (max-width: 768px) {
-    html, body {
-        background-attachment: scroll !important; 
-        
-        background-size: cover !important; 
-        background-position: center top !important;
-        
-        height: auto !important;
-        min-height: 100vh;
-        background-repeat: repeat-y;
-    }
-}
-
-
 
 
