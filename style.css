@@ -267,6 +267,8 @@ footer {
 @media (max-width: 768px) {
     html, body {
         background-attachment: scroll !important; 
+        background-size: 100% 100vh !important; 
+        background-repeat: repeat-y;
         height: auto !important;
         min-height: 100vh;
     }
