@@ -165,39 +165,40 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     padding: 0;
 }
 
-.setup-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-.setup-btn.active {
+.setup-btn:hover, .setup-btn.active {
     background: transparent !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
 }
 
 .setup-info-box {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0); 
+    padding: 0 20px;
     border-radius: 12px; 
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    justify-content: center; 
     align-items: center;     
     text-align: center;
-    min-height: 120px; 
     width: 100%;
     box-sizing: border-box;
-    margin: 0 auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#setup-title, #setup-desc {
-    animation: textFade 0.5s ease-in-out forwards;
+.setup-info-box.show {
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 #setup-title { margin: 0 0 8px 0; color: #ffffff; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
@@ -207,6 +208,7 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     from { opacity: 0; filter: blur(4px); transform: translateY(5px); }
     to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
+
 /* 7. */
 .donors-hall { width: 100%; max-width: 600px; text-align: center; }
 
