@@ -59,16 +59,15 @@
          <section class="setup-section">
     <p class="setup-title-main">Equipment:</p>
     <div class="setup-icons">
-    <button class="link-button setup-btn active" onclick="showSetup('mouse', this)">🖱️</button>
-    <button class="link-button setup-btn" onclick="showSetup('kb', this)">⌨️</button>
-    <button class="link-button setup-btn" onclick="showSetup('pc', this)">🖥️</button>
-</div>
-
+        <button class="setup-btn" onclick="showSetup('mouse', this)">🖱️</button>
+        <button class="setup-btn" onclick="showSetup('kb', this)">⌨️</button>
+        <button class="setup-btn" onclick="showSetup('pc', this)">🖥️</button>
+    </div>
     
     <div id="setup-display" class="setup-info-box">
-    <h3 id="setup-title">Mouse</h3>
-    <p id="setup-desc">None</p>
-</div>
+        <h3 id="setup-title">None</h3>
+        <p id="setup-desc">None</p>
+    </div>
 </section>
 
         <section class="donors-hall">
@@ -116,41 +115,48 @@
         </div>
     </footer>
     <script>
+    // 1.
     const setupData = {
         mouse: { title: "Mouse", desc: "None" },
         kb: { title: "Keyboard", desc: "None" },
         pc: { title: "PC Build", desc: "None" }
     };
 
+    let currentType = null;
+
+    // 2.
     function showSetup(type, btn) {
         const titleEl = document.getElementById('setup-title');
         const descEl = document.getElementById('setup-desc');
         const box = document.getElementById('setup-display');
 
+        if (currentType === type) {
+            box.classList.remove('show');
+            btn.classList.remove('active');
+            currentType = null;
+            return;
+        }
+
         document.querySelectorAll('.setup-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
+        
+        box.classList.add('show');
+        
         titleEl.style.animation = 'none';
         descEl.style.animation = 'none';
-        void titleEl.offsetWidth;
-
+        void box.offsetWidth;
+        
         titleEl.innerText = setupData[type].title;
         descEl.innerText = setupData[type].desc;
 
         titleEl.style.animation = 'textFade 0.5s ease-in-out forwards';
         descEl.style.animation = 'textFade 0.5s ease-in-out forwards';
-    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const firstBtn = document.querySelector('.setup-btn');
-        if (firstBtn) showSetup('mouse', firstBtn);
-    });
+        currentType = type;
+    }
 </script>
 </body>
 </html>
-
-
-
 
 
 
