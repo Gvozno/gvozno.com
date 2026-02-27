@@ -111,7 +111,7 @@
     <footer>
         <div class="footer-content">
             <p class="copyright">&copy; 2025–2026 Gvozno</p>
-            <a href="mailto:himself@gvozno.com" class="footer-email">himself@gvozno.com</a>
+            <a href="#" id="contact-email" class="footer-email">Loading...</a>
         </div>
     </footer>
     <script>
@@ -153,11 +153,21 @@
         descEl.style.animation = 'textFade 0.5s ease-in-out forwards';
 
         currentType = type;
-    }
+        }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const u = "himself";
+        const d = "gvozno.com";
+        const e = document.getElementById('contact-email');
+        if (e) {
+            const fullEmail = u + "@" + d;
+            e.href = "mailto:" + fullEmail;
+            e.innerText = fullEmail;
+        }
+    });
 </script>
 </body>
 </html>
-
 
 
 
