@@ -1,25 +1,45 @@
 /* 1. */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: #ffffff;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                url("./photo.jpg") no-repeat center center fixed;
+    background-color: #000000;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), #000000), 
+                url("preview11.jpg") no-repeat center center;
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
+
+.scroll-down {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .content-wrapper {
-    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;     
-    padding: 60px 20px;
+    align-items: center;    
+    padding: 80px 20px;
     box-sizing: border-box;
+    background-color: #000000;
 }
+
 
 /* 2. */
 .links-title, 
@@ -37,63 +57,13 @@ html, body {
 }
 
 /* 3. */
-.release-container {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 25px;
-    text-align: center;
+header h1 { 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin: 20px 0 5px; 
+    text-align: center; 
 }
-
-.release-link, .release-link:visited { 
-    text-decoration: none !important; 
-    color: #ffffff !important;
-    display: block; 
-    transition: transform 0.3s; 
-}
-.release-link:hover { transform: scale(1.03); }
-
-.release-badge {
-    display: inline-block;
-    background-color: #ff0000 !important; 
-    color: #ffffff !important;   
-    padding: 6px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.video-preview-wrapper {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-}
-
-.preview-image { width: 100%; display: block; }
-
-.play-overlay {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 0, 0, 0.9);
-    width: 70px; height: 45px;
-    border-radius: 12px;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 24px;
-}
-
-/* 4. */
-header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin: 20px 0 5px; text-align: center; }
 
 .links-container {
     display: flex;
@@ -117,15 +87,7 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     border: 2px solid transparent;
 }
 
-.link-button:hover {
-    background: transparent;
-    color: #fff !important; 
-    border: 2px solid #fff;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    transform: translateY(-3px);
-}
-
-/* 5. */
+/* 4. */
 .divider-line {
     width: 100%;
     max-width: 350px; 
@@ -135,7 +97,7 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
 }
 .first-line { margin-top: 60px !important; margin-bottom: 60px !important; }
 
-/* 6. */
+/* 5. */
 .setup-section {
     width: 100%;
     max-width: 350px; 
@@ -163,14 +125,6 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     align-items: center;
     transition: all 0.3s ease;
     padding: 0;
-}
-
-.setup-btn:hover, .setup-btn.active {
-    background: transparent !important;
-    color: #ffffff !important;
-    border: 2px solid #ffffff !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    transform: translateY(-3px);
 }
 
 .setup-info-box {
@@ -209,7 +163,7 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
 
-/* 7. */
+/* 6. */
 .donors-hall { width: 100%; max-width: 600px; text-align: center; }
 
 .titans-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
@@ -251,7 +205,7 @@ header h1 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; m
     35%, 100% { opacity: 0; }
 }
 
-/* 8. */
+/* 7. */
 footer {
     flex-shrink: 0;
     background: rgba(0, 0, 0, 0.85);
@@ -259,11 +213,50 @@ footer {
     padding: 30px 0;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
 }
 .footer-content { display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .copyright { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin: 0; }
 .footer-email { color: rgba(255,255,255,0.4) !important; text-decoration: none !important; font-size: 0.85rem; }
+
+/* 8. */
+
+/* 8.1. */
+button, a, .link-button, .setup-btn {
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+/* 8.2. */
+@media (hover: hover) {
+    .link-button:hover {
+        background: transparent;
+        color: #fff !important; 
+        border: 2px solid #fff;
+        box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        transform: translateY(-3px);
+    }
+
+    .setup-btn:hover {
+        background: transparent !important;
+        color: #ffffff !important;
+        border: 2px solid #ffffff !important;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+    }
+}
+
+/* 8.3. */
+.link-button:active, .setup-btn:active {
+    transform: scale(0.96);
+    opacity: 0.8;
+}
+
+.setup-btn.active {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
 
 
 
