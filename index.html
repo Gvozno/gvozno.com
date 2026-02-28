@@ -26,20 +26,11 @@
 </head>
 <body>
 
-    <div class="bg-fixed-layer"></div>
+    <section class="hero-section">
+        <div class="scroll-down">Scroll Down</div>
+    </section>
 
     <div class="content-wrapper">
-        
-        <div class="release-container">
-            <a href="https://youtu.be/EnRoB-LnUzM?si=8ZkUYb6ppHvp1Vuo" target="_blank" rel="noopener" class="release-link">
-                <span class="release-badge">New Release</span>
-                <div class="video-preview-wrapper">
-                    <img src="preview11.jpg" alt="New Video Gvozno" class="preview-image">
-                    <div class="play-overlay">▶</div>
-                </div>
-            </a>
-        </div>
-
         <header>
             <h1>Welcome</h1>
         </header>
@@ -57,18 +48,18 @@
         <div class="divider-line first-line"></div>
 
          <section class="setup-section">
-    <p class="setup-title-main">Equipment:</p>
-    <div class="setup-icons">
-        <button class="setup-btn" onclick="showSetup('mouse', this)">🖱️</button>
-        <button class="setup-btn" onclick="showSetup('kb', this)">⌨️</button>
-        <button class="setup-btn" onclick="showSetup('pc', this)">🖥️</button>
-    </div>
-    
-    <div id="setup-display" class="setup-info-box">
-        <h3 id="setup-title">None</h3>
-        <p id="setup-desc">None</p>
-    </div>
-</section>
+            <p class="setup-title-main">Equipment:</p>
+            <div class="setup-icons">
+                <button class="setup-btn" onclick="showSetup('mouse', this)">🖱️</button>
+                <button class="setup-btn" onclick="showSetup('kb', this)">⌨️</button>
+                <button class="setup-btn" onclick="showSetup('pc', this)">🖥️</button>
+            </div>
+            
+            <div id="setup-display" class="setup-info-box">
+                <h3 id="setup-title">None</h3>
+                <p id="setup-desc">None</p>
+            </div>
+        </section>
 
         <section class="donors-hall">
             <div class="divider-line"></div>
@@ -105,17 +96,16 @@
             </div>
             
         </section>
-
     </div>
 
     <footer>
-        <div class="footer-content">
-            <p class="copyright">&copy; 2025–2026 Gvozno</p>
-            <a href="#" id="contact-email" class="footer-email">Loading...</a>
-        </div>
-    </footer>
+    <div class="footer-content">
+        <p class="copyright">&copy; 2025–2026 Gvozno</p>
+        <span id="email-place"></span>
+    </div>
+</footer>
+
     <script>
-    // 1.
     const setupData = {
         mouse: { title: "Mouse", desc: "None" },
         kb: { title: "Keyboard", desc: "None" },
@@ -124,7 +114,6 @@
 
     let currentType = null;
 
-    // 2.
     function showSetup(type, btn) {
         const titleEl = document.getElementById('setup-title');
         const descEl = document.getElementById('setup-desc');
@@ -153,19 +142,23 @@
         descEl.style.animation = 'textFade 0.5s ease-in-out forwards';
 
         currentType = type;
-        }
+    }
+    (function() {
+        const encoded = "aGltc2VsZkBndm96bm8uY29t";
+        const target = document.getElementById('email-place');
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const u = "himself";
-        const d = "gvozno.com";
-        const e = document.getElementById('contact-email');
-        if (e) {
-            const fullEmail = u + "@" + d;
-            e.href = "mailto:" + fullEmail;
-            e.innerText = fullEmail;
+        if (target) {
+            const email = atob(encoded);
+            
+            const mailLink = document.createElement('a');
+            mailLink.href = "mailto:" + email;
+            mailLink.className = "footer-email";
+            mailLink.textContent = email;
+            
+            target.appendChild(mailLink);
         }
-    });
-</script>
+    })();
+    </script>
 </body>
 </html>
 
