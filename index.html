@@ -4,160 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gvozno | Official Site</title>
-    <meta name="description" content="Gvozno Official Site.">
-
-    <meta property="og:title" content="Gvozno">
-    <meta property="og:description" content="Gvozno | Official Site">
-    <meta property="og:image" content="https://github.com/Gvozno/gvozno.com/blob/main/favicon1.jpg?raw=true">
-    <meta property="og:url" content="https://gvozno.com">
-    <meta property="og:type" content="website">
-
-    <link rel="icon" href="https://github.com/Gvozno/gvozno.com/blob/main/favicon.png?raw=true" type="image/png">
-    <link rel="shortcut icon" href="https://github.com/Gvozno/gvozno.com/blob/main/favicon.png?raw=true" type="image/png">
-
-    <link rel="apple-touch-icon" href="https://github.com/Gvozno/gvozno.com/blob/main/favicon1.jpg?raw=true">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/Gvozno/gvozno.com/blob/main/favicon.png?raw=true">
-
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="msapplication-TileImage" content="https://github.com/Gvozno/gvozno.com/blob/main/favicon.png?raw=true">
-    <meta name="theme-color" content="#000000">
-
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
 
-    <section class="hero-section">
-        <div class="scroll-down">Scroll Down</div>
-    </section>
+    <section class="hero-section"></section>
 
-    <div class="content-wrapper">
-        <header>
-            <h1>Welcome</h1>
-        </header>
-
-        <main>
-            <p class="links-title">Links:</p>
-            <nav class="links-container">
-                <a href="https://youtube.com/@Gvozno" target="_blank" rel="noopener" class="link-button">Youtube</a>
-                <a href="https://t.me/Gvozno" target="_blank" rel="noopener" class="link-button">Telegram</a>
-                <a href="https://www.twitch.tv/gvozno" target="_blank" rel="noopener" class="link-button">Twitch</a>
-                <a href="https://www.donationalerts.com/r/gvozno" target="_blank" rel="noopener" class="link-button">Donate</a>
-            </nav>
-        </main>
-
-        <div class="divider-line first-line"></div>
-
-         <section class="setup-section">
-            <p class="setup-title-main">Equipment:</p>
-            <div class="setup-icons">
-                <button class="setup-btn" onclick="showSetup('mouse', this)">🖱️</button>
-                <button class="setup-btn" onclick="showSetup('kb', this)">⌨️</button>
-                <button class="setup-btn" onclick="showSetup('pc', this)">🖥️</button>
-            </div>
-            
-            <div id="setup-display" class="setup-info-box">
-                <h3 id="setup-title">None</h3>
-                <p id="setup-desc">None</p>
+    <div class="container">
+        <section class="content-block">
+            <h2 class="section-title">LINKS</h2>
+            <div class="links-grid">
+                <a href="https://www.donationalerts.com/r/gvozno" target="_blank" rel="noopener" class="card link-item donate">
+                    <span class="label">Support</span>
+                    <span class="value">Donate</span>
+                </a>
+                <a href="https://youtube.com/@Gvozno" target="_blank" rel="noopener" class="card link-item">
+                    <span class="label">Platform</span>
+                    <span class="value">YouTube</span>
+                </a>
+                <a href="https://t.me/Gvozno" target="_blank" rel="noopener" class="card link-item">
+                    <span class="label">Community</span>
+                    <span class="value">Telegram</span>
+                </a>
+                <a href="https://www.twitch.tv/gvozno" target="_blank" rel="noopener" class="card link-item">
+                    <span class="label">Live</span>
+                    <span class="value">Twitch</span>
+                </a>
             </div>
         </section>
 
-        <section class="donors-hall">
-            <div class="divider-line"></div>
-            <h2 class="donors-title">GVOZNO LEGENDS</h2>
-            
-            <div class="titans-row">
-                <div class="titan-card">
-                    <span class="titan-rank">TOP 1</span>
-                    <span class="titan-name">None</span>
+        <section class="content-block">
+            <h2 class="section-title">EQUIPMENT & CONFIG</h2>
+            <div class="specs-wrapper card">
+                <div class="spec-tabs">
+                    <button onclick="tab('mouse', this)" class="tab-btn active">MOUSE</button>
+                    <button onclick="tab('kb', this)" class="tab-btn">BOARD</button>
+                    <button onclick="tab('pc', this)" class="tab-btn">PC</button>
                 </div>
-                <div class="titan-card">
-                    <span class="titan-rank">TOP 2</span>
-                    <span class="titan-name">None</span>
-                </div>
-                <div class="titan-card">
-                    <span class="titan-rank">TOP 3</span>
-                    <span class="titan-name">None</span>
+                <div id="spec-content" class="spec-info">
+                    <h3 id="spec-name">None</h3>
+                    <div id="spec-detail" class="spec-detail">None</div>
                 </div>
             </div>
-
-            <div class="fade-container">
-                <div class="fade-group g1">
-                    <span>None</span> <span>None</span> <span>None</span> 
-                    <span>None</span> 
-                </div>
-                <div class="fade-group g2">
-                    <span>None</span> <span>None</span> <span>None</span> 
-                    <span>None</span> 
-                </div>
-                <div class="fade-group g3">
-                    <span>None</span> <span>None</span> <span>None</span> 
-                    <span>None</span> 
-                </div>
-            </div>
-            
         </section>
-    </div>
+
+        <section class="content-block">
+            <h2 class="section-title">GVOZNO LEGENDS</h2>
+            <div class="titans">
+                <div class="titan-card gold">
+                    <div class="rank">TOP 01</div>
+                    <div class="name">None</div>
+                </div>
+                <div class="titan-card">
+                    <div class="rank">TOP 02</div>
+                    <div class="name">None</div>
+                </div>
+                <div class="titan-card">
+                    <div class="rank">TOP 03</div>
+                    <div class="name">None</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="splash-container">
+            <span id="splash-text">Loading wisdom...</span>
+        </div>
 
     <footer>
-    <div class="footer-content">
-        <p class="copyright">&copy; 2025–2026 Gvozno</p>
-        <span id="email-place"></span>
-    </div>
-</footer>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025–2026 GVOZNO</p>
+            <span id="email-place"></span>
+        </div>
+    </footer>
 
     <script>
-    const setupData = {
-        mouse: { title: "Mouse", desc: "None" },
-        kb: { title: "Keyboard", desc: "None" },
-        pc: { title: "PC Build", desc: "None" }
-    };
+        const setupData = {
+            mouse: { 
+                n: "None", 
+                d: "DPI: 400 | Sens: 0.7" 
+            },
+            kb: { 
+                n: "Custom Mechanical", 
+                d: "80% Layout" 
+            },
+            pc: { 
+                n: "None", 
+                d: "None" 
+            }
+        };
 
-    let currentType = null;
-
-    function showSetup(type, btn) {
-        const titleEl = document.getElementById('setup-title');
-        const descEl = document.getElementById('setup-desc');
-        const box = document.getElementById('setup-display');
-
-        if (currentType === type) {
-            box.classList.remove('show');
-            btn.classList.remove('active');
-            currentType = null;
-            return;
+        function tab(id, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const content = document.getElementById('spec-content');
+            content.style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById('spec-name').innerText = setupData[id].n;
+                document.getElementById('spec-detail').innerText = setupData[id].d;
+                content.style.opacity = 1;
+            }, 200);
         }
 
-        document.querySelectorAll('.setup-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        box.classList.add('show');
-        
-        titleEl.style.animation = 'none';
-        descEl.style.animation = 'none';
-        void box.offsetWidth;
-        
-        titleEl.innerText = setupData[type].title;
-        descEl.innerText = setupData[type].desc;
+      const splashes = [
+        "Gvozno approved.",
+        "Precision is key.",
+        "Stay focused.",
+        "One more game...",
+        "Trust the process.",
+    ];
 
-        titleEl.style.animation = 'textFade 0.5s ease-in-out forwards';
-        descEl.style.animation = 'textFade 0.5s ease-in-out forwards';
+    function showRandomSplash() {
+        const splashElem = document.getElementById('splash-text');
+        if (!splashElem) return;
 
-        currentType = type;
+        const luck = Math.random(); 
+        
+        if (luck <= 0.01) {
+            splashElem.innerText = "You're lucky";
+            splashElem.style.color = "#ffd700"; 
+            splashElem.style.textShadow = "0 0 10px rgba(255, 215, 0, 0.5)";
+        } else {
+            const randomIndex = Math.floor(Math.random() * splashes.length);
+            splashElem.innerText = splashes[randomIndex];
+            splashElem.style.color = "var(--dim)"; 
+            splashElem.style.textShadow = "none";
+        }
     }
-    (function() {
-        const encoded = "aGltc2VsZkBndm96bm8uY29t";
-        const target = document.getElementById('email-place');
 
-        if (target) {
-            const email = atob(encoded);
-            
-            const mailLink = document.createElement('a');
-            mailLink.href = "mailto:" + email;
-            mailLink.className = "footer-email";
-            mailLink.textContent = email;
-            
-            target.appendChild(mailLink);
-        }
-    })();
+        (function() {
+            const encoded = "aGltc2VsZkBndm96bm8uY29t";
+            const target = document.getElementById('email-place');
+            if (target) {
+                const email = atob(encoded);
+                target.innerHTML = `<a href="mailto:${email}" class="footer-email">${email}</a>`;
+            }
+        })();
+
+        window.onload = () => tab('mouse', document.querySelector('.tab-btn'));
+         showRandomSplash();
     </script>
 </body>
 </html>
