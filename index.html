@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gvozno | Official Site</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gvozno | Official Hub</title>
+    
+    <meta name="description" content="Gvozno — official hub: cinematic video editing, sound design, custom thumbnails and high-production content.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gvozno.com">
+    <meta property="og:title" content="Gvozno | Official Hub">
+    <meta property="og:description" content="Pro editing • Cinematic sound design • Stunning thumbnails. Turning ideas into legendary videos.">
+    <meta property="og:image" content="https://gvozno.com/og-preview.png">
+    <meta property="og:site_name" content="Gvozno">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gvozno | Official Hub">
+    <meta name="twitter:description" content="Professional editing, cinematic sound & fire thumbnails">
+    
+    <link rel="canonical" href="https://gvozno.com">
+    
     <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link rel="apple-touch-icon" href="favicon1.png" type="image/png">
+    
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="hero-section"></section>
+    <section class="hero-section">
+        <h1 class="visually-hidden">Gvozno: Professional Video Editor and Cinematic Sound Designer</h1>
+    </section>
 
     <div class="container">
+
         <section class="content-block">
             <h2 class="section-title">LINKS</h2>
             <div class="links-grid">
@@ -37,10 +61,10 @@
         <section class="content-block">
             <h2 class="section-title">EQUIPMENT & CONFIG</h2>
             <div class="specs-wrapper card">
-                <div class="spec-tabs">
-                    <button onclick="tab('mouse', this)" class="tab-btn active">MOUSE</button>
-                    <button onclick="tab('kb', this)" class="tab-btn">BOARD</button>
-                    <button onclick="tab('pc', this)" class="tab-btn">PC</button>
+                <div class="spec-tabs" role="tablist">
+                    <button data-tab="mouse" class="tab-btn active" role="tab" aria-selected="true" aria-controls="spec-content">MOUSE</button>
+                    <button data-tab="kb" class="tab-btn" role="tab" aria-selected="false" aria-controls="spec-content">BOARD</button>
+                    <button data-tab="pc" class="tab-btn" role="tab" aria-selected="false" aria-controls="spec-content">PC</button>
                 </div>
                 <div id="spec-content" class="spec-info">
                     <h3 id="spec-name">None</h3>
@@ -52,101 +76,131 @@
         <section class="content-block">
             <h2 class="section-title">GVOZNO LEGENDS</h2>
             <div class="titans">
-               <div class="titan-card gold">
-            <div class="rank">TOP 01</div>
-            <div class="name">None</div>
-        </div>
-        <div class="titan-card silver">
-            <div class="rank">TOP 02</div>
-            <div class="name">None</div>
-        </div>
-        <div class="titan-card bronze">
-            <div class="rank">TOP 03</div>
-            <div class="name">None</div>
+                <div class="titan-card gold">
+                    <div class="rank">TOP 01</div>
+                    <div class="name">None</div>
+                </div>
+                <div class="titan-card silver">
+                    <div class="rank">TOP 02</div>
+                    <div class="name">None</div>
+                </div>
+                <div class="titan-card bronze">
+                    <div class="rank">TOP 03</div>
+                    <div class="name">None</div>
                 </div>
             </div>
         </section>
 
         <div class="splash-container">
             <span id="splash-text">Loading wisdom...</span>
-            </div>
-        </div> <footer>
+        </div>
+
+    </div>
+
+    <footer>
         <div class="footer-content">
-            <p class="copyright">&copy; 2025–2026 GVOZNO</p>
+            <p class="copyright">© 2025–2026 GVOZNO</p>
             <span id="email-place"></span>
         </div>
     </footer>
 
     <script>
+        "use strict";
+
         const setupData = {
-            mouse: { 
-                n: "None", 
-                d: "DPI: 400 | Sens: 0.7" 
-            },
-            kb: { 
-                n: "Custom Mechanical", 
-                d: "80% Layout" 
-            },
-            pc: { 
-                n: "None", 
-                d: "None" 
-            }
+            mouse: { n: "None", d: "DPI: 400 | Sens: 0.7" },
+            kb:    { n: "Custom Mechanical", d: "80% Layout" },
+            pc:    { n: "None", d: "None" }
         };
 
+        const splashes = [
+            "0% Mountains, 100% Gvozno.",
+            "Precision is key.",
+            "Elevation: Higher than any plateau.",
+            "Not a geographical object. Just a legend.",
+            "Trust the process.",
+            "Not found on maps."
+        ];
+
         function tab(id, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
+
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
             const content = document.getElementById('spec-content');
             content.style.opacity = 0;
-            setTimeout(() => {
-                document.getElementById('spec-name').innerText = setupData[id].n;
-                document.getElementById('spec-detail').innerText = setupData[id].d;
+
+            const onTransitionEnd = () => {
+                document.getElementById('spec-name').textContent = setupData[id].n;
+                document.getElementById('spec-detail').textContent = setupData[id].d;
                 content.style.opacity = 1;
-            }, 200);
+                content.removeEventListener('transitionend', onTransitionEnd);
+            };
+
+            content.addEventListener('transitionend', onTransitionEnd);
+
+            setTimeout(() => {
+                if (content.style.opacity === '0') {
+                    document.getElementById('spec-name').textContent = setupData[id].n;
+                    document.getElementById('spec-detail').textContent = setupData[id].d;
+                    content.style.opacity = 1;
+                }
+            }, 300);
         }
 
-      const splashes = [
-        "0% Mountains, 100% Gvozno.",
-        "Precision is key.",
-        "Elevation: Higher than any plateau.",
-        "Not a geographical object. Just a legend.",
-        "Trust the process.",
-        "Not found on maps.",
-    ];
+        function showRandomSplash() {
+            const splashElem = document.getElementById('splash-text');
+            if (!splashElem) return;
 
-    function showRandomSplash() {
-        const splashElem = document.getElementById('splash-text');
-        if (!splashElem) return;
-
-        const luck = Math.random(); 
-        
-        if (luck <= 0.01) {
-            splashElem.innerText = "You're lucky";
-            splashElem.style.color = "#ffd700"; 
-            splashElem.style.textShadow = "0 0 10px rgba(255, 215, 0, 0.5)";
-        } else {
-            const randomIndex = Math.floor(Math.random() * splashes.length);
-            splashElem.innerText = splashes[randomIndex];
-            splashElem.style.color = "var(--dim)"; 
-            splashElem.style.textShadow = "none";
+            const luck = Math.random();
+            
+            if (luck <= 0.01) {
+                splashElem.textContent = "You're lucky";
+                splashElem.style.color = "#ffd700";
+                splashElem.style.textShadow = "0 0 10px rgba(255, 215, 0, 0.5)";
+            } else {
+                const randomIndex = Math.floor(Math.random() * splashes.length);
+                splashElem.textContent = splashes[randomIndex];
+                splashElem.style.color = "var(--dim)";
+                splashElem.style.textShadow = "none";
+            }
         }
-    }
 
-        (function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-tab');
+                    tab(id, btn);
+                });
+            });
+
+            const firstBtn = document.querySelector('.tab-btn.active');
+            if (firstBtn) {
+                const firstId = firstBtn.getAttribute('data-tab');
+                tab(firstId, firstBtn);
+            }
+
+            showRandomSplash();
+
             const encoded = "aGltc2VsZkBndm96bm8uY29t";
             const target = document.getElementById('email-place');
             if (target) {
                 const email = atob(encoded);
-                target.innerHTML = `<a href="mailto:${email}" class="footer-email">${email}</a>`;
+                const link = document.createElement('a');
+                link.href = `mailto:${email}`;
+                link.className = 'footer-email';
+                link.textContent = email;
+                target.appendChild(link);
             }
-        })();
-
-        window.onload = () => tab('mouse', document.querySelector('.tab-btn'));
-         showRandomSplash();
+        });
     </script>
 </body>
 </html>
-
 
 
 
