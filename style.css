@@ -30,6 +30,18 @@ body {
     background-size: cover;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
 /* Layout */
 .container {
     max-width: 1000px;
@@ -48,7 +60,6 @@ body {
     border-radius: 20px;
 }
 
-/* Links Grid */
 .links-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -76,11 +87,6 @@ body {
 .label { font-size: 0.7rem; text-transform: uppercase; color: var(--dim); margin-bottom: 5px; letter-spacing: 1px; }
 .value { font-size: 1.4rem; font-weight: 700; }
 
-.donate { background: white; }
-.donate * { color: black; }
-.donate:hover { background: #f0f0f0; }
-
-/* Section Titles */
 .section-title {
     font-size: 0.8rem;
     letter-spacing: 5px;
@@ -90,7 +96,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Equipment */
 .specs-wrapper {
     padding: 60px 40px;
     text-align: center;
@@ -194,4 +199,3 @@ footer {
     .spec-info h3 { font-size: 1.6rem; }
     .titan-card { padding: 20px; }
 }
-
