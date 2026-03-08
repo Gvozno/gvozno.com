@@ -25,17 +25,20 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     overscroll-behavior-y: none;
+    background-color: #000000;
+    height: 100dvh;
 }
 
 body {
     background: transparent;
     color: white;
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-family: system-ui, 'Segoe UI', sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+    overscroll-behavior-y: none;
 }
-
 canvas {
     position: fixed;
     inset: 0;
@@ -425,4 +428,5 @@ footer {
     .container { padding: 80px 16px 0; }
     .featured-top-bar { padding: 16px 20px 12px; font-size: 0.8rem; }
 }
+
 
