@@ -435,6 +435,23 @@ footer {
     }
 
     .specs-wrapper { padding: 40px 20px; }
+
+    .spec-tabs {
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+
+    .tab-btn {
+        flex: 1;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .spec-info h3 { font-size: 1.6rem; }
+    .spec-detail { font-size: 0.95rem; }
 }
 
 @media (max-width: 600px) {
@@ -447,5 +464,6 @@ footer {
     .container { padding: 80px 16px 0; }
     .featured-top-bar { padding: 16px 20px 12px; font-size: 0.8rem; }
 }
+
 
 
