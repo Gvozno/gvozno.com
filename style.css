@@ -24,6 +24,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overscroll-behavior-y: none;
 }
 
 body {
@@ -424,3 +425,4 @@ footer {
     .container { padding: 80px 16px 0; }
     .featured-top-bar { padding: 16px 20px 12px; font-size: 0.8rem; }
 }
+
