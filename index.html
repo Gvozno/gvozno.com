@@ -225,26 +225,26 @@
             }
             const now = Date.now();
             while (trail.length && now - trail[0].time > 700) trail.shift();
-            if (trail.length > 3) {
-                ctx.save();
-                ctx.shadowBlur = 24; ctx.shadowColor = '#a8ceff'; ctx.strokeStyle = '#e8f3ff'; ctx.lineCap = 'round';
-                for (let i = 1; i < trail.length; i++) {
-                    const alpha = i / (trail.length - 1);
-                    const width = 1.8 + (i / trail.length) * 3.2;
-                    ctx.globalAlpha = alpha * 0.95;
-                    ctx.lineWidth = width;
-                    ctx.beginPath();
-                    ctx.moveTo(trail[i - 1].x, trail[i - 1].y);
-                    ctx.lineTo(trail[i].x, trail[i].y);
-                    ctx.stroke();
-                }
-                ctx.restore();
-                ctx.save();
-                ctx.globalAlpha = 1; ctx.shadowBlur = 35; ctx.shadowColor = '#ffffff';
-                ctx.fillStyle = '#f0f8ff';
-                ctx.fillRect(mouseX - 1.1, mouseY - 1.1, 2.2, 2.2);
-                ctx.restore();
-            }
+           // if (trail.length > 3) {
+//     ctx.save();
+//     ctx.shadowBlur = 24; ctx.shadowColor = '#a8ceff'; ctx.strokeStyle = '#e8f3ff'; ctx.lineCap = 'round';
+//     for (let i = 1; i < trail.length; i++) {
+//         const alpha = i / (trail.length - 1);
+//         const width = 1.8 + (i / trail.length) * 3.2;
+//         ctx.globalAlpha = alpha * 0.95;
+//         ctx.lineWidth = width;
+//         ctx.beginPath();
+//         ctx.moveTo(trail[i - 1].x, trail[i - 1].y);
+//         ctx.lineTo(trail[i].x, trail[i].y);
+//         ctx.stroke();
+//     }
+//     ctx.restore();
+//     ctx.save();
+//     ctx.globalAlpha = 1; ctx.shadowBlur = 35; ctx.shadowColor = '#ffffff';
+//     ctx.fillStyle = '#f0f8ff';
+//     ctx.fillRect(mouseX - 1.1, mouseY - 1.1, 2.2, 2.2);
+//     ctx.restore();
+// }
             requestAnimationFrame(animate);
         }
         animate();
@@ -367,4 +367,3 @@
     </script>
 </body>
 </html>
-
