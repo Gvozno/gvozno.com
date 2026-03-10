@@ -465,5 +465,14 @@ footer {
     .featured-top-bar { padding: 16px 20px 12px; font-size: 0.8rem; }
 }
 
+.content-block,
+.featured-wrapper,
+.link-item,
+.titan-card {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+
 
 
