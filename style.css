@@ -1,6 +1,6 @@
 :root {
     --bg: #000000;
-    --card-bg: rgba(255, 255, 255, 0.06);
+    --card-bg: rgba(150, 150, 150, 0.06);
     --border: rgba(255, 255, 255, 0.25);
     --accent: #ffffff;
     --dim: #888888;
@@ -472,6 +472,7 @@ footer {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+
 
 
 
